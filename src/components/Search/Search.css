@@ -1,0 +1,42 @@
+.hsp-search-wrapper {
+  position: relative;
+  margin: 40px 0;
+}
+
+.hsp-search-wrapper input[type='text'] {
+  border:1px solid #ddd;
+  width: 100%;
+  padding: 10px 20px;
+  color:#666;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.hsp-search-btn-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.hsp-search-btn-wrapper button:last-child {
+  border-radius: 0 3px 3px 0;
+  background: #007bff;
+}
+
+.hsp-search-btn-wrapper button {
+  background: #333;
+  border:0 none;
+  color:#fff;
+  font-size: 14px;
+  width: 85px;
+  padding:11px 0;
+}
+
+.hsp-search-btn-wrapper button:hover {
+  opacity: 0.95;
+}
+
+.hsp-search-btn-wrapper button:focus {
+  outline: 0;
+}
