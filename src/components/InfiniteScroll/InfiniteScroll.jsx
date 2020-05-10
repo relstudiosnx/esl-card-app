@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
+import throttle from 'lodash/throttle';
 
 const InfiniteScroll = ({ children, onIsAtBottomChange }) => {
 
@@ -11,11 +12,12 @@ const InfiniteScroll = ({ children, onIsAtBottomChange }) => {
   };
 
   const onScroll = () => {
-    window.addEventListener('scroll', function() {
+    const onScroll = throttle(() => {
       if(nodeReference && nodeReference.current) {
         setIsAtBottom(window.innerHeight + window.scrollY >= nodeReference.current.offsetTop);
       }
-    });
+    }, 100);
+    window.addEventListener('scroll', onScroll);
   };
 
   useEffect(updateBottomChange, [isAtBottom, onIsAtBottomChange]);
